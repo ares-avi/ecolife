@@ -13,12 +13,7 @@ class ElInstallation {
 				return "{$return}/el_data/";
 		}
 		
-		/**
-		 * Check if mod_rewrite exist or not;
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
-		 *
-		 */
+		
 		public static function is_mod_rewrite() {
 				if(isset($_REQUEST['mod_rewrite_check_skip']) && $_REQUEST['mod_rewrite_check_skip'] == true) {
 						return true;
@@ -36,56 +31,32 @@ class ElInstallation {
 				return function_exists('curl_version');
 		}
 		
-		/**
-		 * Check if php GD library is installed or not
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
-		 *
-		 */
+		
 		public static function isPhpGd() {
 				if(extension_loaded('gd') && function_exists('gd_info')) {
 						return true;
 				}
 				return false;
 		}
-		/**
-		 * Check if the ZipArchive class exists or not
-		 *
-		 * @return boolean
-		 */
+		
 		public static function isZipClass() {
 				return class_exists('ZipArchive');
 		}
-		/**
-		 * Check if allow_url_fopen is available or not
-		 *
-		 * @return boolean
-		 */
-		public static function allowUrlFopen() {
+		 static function allowUrlFopen() {
 				return ini_get('allow_url_fopen');
 		}
-		/**
-		 * Check if php is > than 5.4
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
-		 *
-		 */
+		
 		public static function isPhp() {
 				$phpversion = substr(PHP_VERSION, 0, 6);
-				//$phpversion >= 5.6 , works fine with php 5.6
-			        //Support php 5.6 or larger remove support for < 5.6 #1287
-				//8tH April 2020, remove support for outdated PHP version
+		
+				
 				if($phpversion >= 7.0) {
 						return true;
 				}
 				return false;
 		}
 		
-		/**
-		 * Check if server is running apache or litespeed
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
-		 *
+		/
 		 */
 		public static function isApache() {
 				if(preg_match('/apache/i', $_SERVER["SERVER_SOFTWARE"]) || preg_match('/LiteSpeed/i', $_SERVER["SERVER_SOFTWARE"])) {
@@ -94,13 +65,7 @@ class ElInstallation {
 				return false;
 		}
 		
-		/**
-		 * Check if configuration directory is writeable or not
-		 *
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
-		 * @return bool;
-		 */
+		
 		public static function isCon_WRITEABLE() {
 				$path = str_replace('installation/', '', el_installation_paths()->root);
 				$path = $path . 'configurations';
@@ -129,8 +94,7 @@ class ElInstallation {
 		 }
 		/**
 		 * Check if mysqli class exist exist or not
-		 *
-		 * @last edit: $arsalanshah
+	
 		 * @Reason: Initial;
 		 * @return bool;
 		 */
@@ -140,7 +104,7 @@ class ElInstallation {
 		
 		/**
 		 * Get database user;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 *
 		 */
@@ -154,7 +118,7 @@ class ElInstallation {
 		
 		/**
 		 * Get db password;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 *
 		 */
@@ -164,8 +128,8 @@ class ElInstallation {
 		
 		/**
 		 * Get databasename;
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
+
+
 		 *++
 		 */
 		public function dbname($dbname) {
@@ -177,8 +141,7 @@ class ElInstallation {
 		}
 		
 		/**
-		 * Get db host;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 *
 		 */
@@ -208,7 +171,7 @@ class ElInstallation {
 
 		/**
 		 * Get db host;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 *
 		 */
@@ -220,7 +183,7 @@ class ElInstallation {
 		
 		/**
 		 * Get web url;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 *
 		 */
@@ -232,7 +195,7 @@ class ElInstallation {
 		
 		/**
 		 * Set a datadriectory;
-		 * @last edit: $arsalanshah
+
 		 * @retun void;
 		 *
 		 */
@@ -246,7 +209,7 @@ class ElInstallation {
 		
 		/**
 		 * Process Data;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 * @return bool;
 		 */
@@ -312,7 +275,7 @@ class ElInstallation {
 		
 		/**
 		 * Get Installation dir path;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 * @return string
 		 */
@@ -322,7 +285,7 @@ class ElInstallation {
 		
 		/**
 		 * Connect to database;
-		 * @last edit: $arsalanshah
+
 		 * @Reason: Initial;
 		 */
 		public function dbconnect() {
@@ -338,8 +301,7 @@ class ElInstallation {
 		
 		/**
 		 * Database configuration;
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
+
 		 */
 		function configurations_db() {
 				$params       = array(
@@ -371,8 +333,7 @@ class ElInstallation {
 		
 		/**
 		 * Web site configuration;
-		 * @last edit: $arsalanshah
-		 * @Reason: Initial;
+
 		 * @return bool;
 		 */
 		function configurations_site() {
