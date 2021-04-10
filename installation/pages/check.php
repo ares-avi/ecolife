@@ -15,7 +15,7 @@ if (elInstallation::isPhp()) {
 }
 //can not add if message as we have too much to translate already
 if(!elInstallation::isCacheWriteable()){
-   echo '<div class="el-installation-message el-installation-fail">'. el_installation_print('el:install:cachedir:note:failed') . ' <a target="_blank" href="https://www.opensource-socialnetwork.org/wiki/view/4378/directories-and-files-permission">https://www.opensource-socialnetwork.org/wiki/view/4378/directories-and-files-permissiom</a></div>';	
+   echo '<div class="el-installation-message el-installation-fail">'. el_installation_print('el:install:cachedir:note:failed') . ' <a target="_blank" </a></div>';	
    $error[] = 'cache';
 }
 if(elInstallation::allowUrlFopen()){
