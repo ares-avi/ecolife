@@ -146,7 +146,7 @@ class ElInstallation {
 		 *
 		 */
 		public function dbhost($dbhost) {
-				preg_match('/([\w-\.]+)(|\:(\d+))$/', $dbhost, $matches);
+				preg_match('([\w\.]+)(|\:(\d+))$', $dbhost, $matches);
 				//set the host without port
 				if(isset($matches[1])){
 					$dbhost = $matches[1];
